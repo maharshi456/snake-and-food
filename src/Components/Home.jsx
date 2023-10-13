@@ -20,7 +20,7 @@ const Home = () => {
       <CardMedia
         style={{ height: "1061px", width: "2135px" }}
         component="img"
-        image={BG2}
+        image={BG1}
         title="Pancakes"
         alt="Pancakes"
       />
