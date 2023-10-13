@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Border from "./Components/Arena/Border";
+import Infinity from "./Components/Arena/Infinity";
+import Home from "./Components/Home";
+import "./index.css";
+
+function Errors() {
+  return (
+    <center>
+      <h1>Are you here for game or for exploration</h1>
+    </center>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Border" element={<Border />} />
+      <Route path="/Infinity" element={<Infinity />} />
+      <Route path="*" element={<Errors />} />
+    </Routes>
   );
 }
 
