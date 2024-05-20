@@ -11,30 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .game-area {
   position: relative;
-  margin: 50px auto;
-  width: 500px;
-  height: 500px;
+  /* margin-bottom: 50px auto; */
+  background-image: url('./assets/images/grass_base.png');
+  width: 99.8%;
+  height: 710px;
   border: 2px solid #000;
 }
 
 .snake-dot {
   position: absolute;
   width: 2%;
-  height: 2%;
-  background-color: #000;
-  border: 1px solid #fff;
+  height: 4%;
+  background-image: url('./assets/images/snake_skin.jpg');
+  background-size: 150%;
+  /* border: 1px solid #fff; */
   z-index: 2;
+  border-radius: 15%;
+}
+
+.snake-dot:first-child {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
 
 .snake-food {
   position: absolute;
   width: 2%;
-  height: 2%;
-  background: red;
+  height: 4%;
+  background: rgb(191, 1, 1);
   border: 1px solid #fff;
   z-index: 1;
+  border-top-left-radius:50%;
+  border-top-right-radius:43%;
+  border-bottom-left-radius:35%;
+  border-bottom-right-radius:30%;
 }
 
 .button {
@@ -46,6 +59,7 @@ code {
   padding-bottom: 1%;
   margin-inline: 5%;
 }
+
 .div {
   background-color: #282c34;
   text-align: center;

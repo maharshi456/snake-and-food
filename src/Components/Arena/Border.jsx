@@ -2,33 +2,24 @@ import Board from "../Board";
 import Food from "../Food";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import GrassBase from '../../assets/images/grass_base.png'
+
+const randomFoodGenerate = () => {
+  let min = 1;
+  let max = 99;
+  let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  return [x, y];
+};
 
 const Border = () => {
-  const randomFoodGenerate = () => {
-    let min = 1;
-    let max = 99;
-    let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
-    let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
-    return [x, y];
-  };
   const [foodDot, setFoodDot] = useState(randomFoodGenerate);
   const [snakeDots, setSnakeDots] = useState([
     [2, 2],
     [4, 2],
     [6, 2],
   ]);
-  // const [snakeDots, setSnakeDots] = useState([
-  //   [12, 4],
-  //   [14, 4],
-  //   [16, 4],
-  //   [18, 4],
-  //   [20, 4],
-  //   [22, 4],
-  //   [24, 4],
-  //   [26, 4],
-  //   [28, 4],
-  //   [30, 4],
-  // ]);
+
   const [speed, setSpeed] = useState(70);
   const [direction, setDirection] = useState("down");
   const navigate = useNavigate();
@@ -55,11 +46,6 @@ const Border = () => {
       default:
         break;
     }
-    // if (e.which === 16) {
-    //   setSpeed(speed - 10);
-    // } else {
-    //   setSpeed(speed);
-    // }
   };
 
   const SnakePlaceMoment = useCallback((snakeDots) => {
